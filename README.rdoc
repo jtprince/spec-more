@@ -1,7 +1,7 @@
 = spec-more
 
 Spec::More gives very terse aliases for spec'ing inspired by Perl's
-Test::More.
+Test::More.  Less is More as they say.
 
 == Synopsis
 
@@ -16,7 +16,6 @@ Test::More.
 
     xdescribe  skip it
     xit        skip it
-
 
 == Usage
 
