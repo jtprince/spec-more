@@ -1,0 +1,7 @@
+= spec-more
+
+Description goes here.
+
+== Copyright
+
+Copyright (c) 2009 John Prince. See LICENSE for details.
