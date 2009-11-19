@@ -1,7 +1,50 @@
 = spec-more
 
-Description goes here.
+Spec::More gives very terse aliases for spec'ing inspired by Perl's
+Test::More.
 
-== Copyright
+== Synopsis
 
-Copyright (c) 2009 John Prince. See LICENSE for details.
+    .is        .should.equal
+    .isnt      .should.not.equal
+    .isa       .class.should.equal
+ 
+    .enums     (all elements equal [using #each])
+    .matches   .should.match
+
+    ok x == y  assert x == y
+
+    xdescribe  skip it
+    xit        skip it
+
+
+== Usage
+
+    require 'spec/more'  # depends on bacon
+
+    # currently only works within a bacon context
+    describe 'a big dog' do
+      it 'barks loudly' do
+        dog.bark.is 'loud'
+        dog.bark.matches /oud/
+
+        [1,2,3].enums [1,2,3]
+        'dog'.matches /og/
+        ok dog.bark == 'loud'
+      end
+    end
+
+    xdescribe 'a spec to be skipped' do
+      xit 'skip this spec' do 
+      end
+    end
+
+== Installation
+
+    gem install spec-more
+
+Has bacon as a dependency so it should install that too.
+
+== Limitations
+
+For Bacon[http://github.com/chneukirchen/bacon/] only right now. (pull requests appreciated).
