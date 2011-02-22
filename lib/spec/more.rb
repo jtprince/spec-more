@@ -16,6 +16,7 @@ class Object
   end
 
   def matches(other)
+    other = Regexp.new(Regexp.escape(other)) if other.is_a?(String)
     should.match other
   end
 

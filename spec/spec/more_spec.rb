@@ -49,4 +49,11 @@ describe "spec more" do
     xit 'just skip this check for now' do end.should.be.nil
     xdescribe 'just skip this context for now' do end.should.be.nil
   end
+
+  it 'can match regular expressions or strings' do
+    "doggy".matches /ogg/
+    "do(gg)[^]y".matches 'o(gg)[^]'  # the string should match inside no matter what
+    lambda {"do(gg)[^]y".matches 'oompa loompa'}.should.raise(Bacon::Error)
+    lambda {"do(gg)[^]y".matches /o(gg)/}.should.raise(Bacon::Error)
+  end
 end
