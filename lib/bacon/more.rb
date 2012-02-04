@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'bacon'
 
 class Object

@@ -1,6 +1,19 @@
+require 'spec_helper'
 
-shared_examples_for 'a spec-more like thing' do
-    before do
+class MyClass 
+  attr_accessor :color, :height
+  def initialize(color, height)
+    @color = color
+    @height = height
+  end
+  
+  def each(&block)
+    [@color, @height].each(&block)
+  end
+end
+
+describe "rspec/more" do
+  before do
     @obj1 = MyClass.new('blue', 52)
     @obj2 = MyClass.new('blue', 52)
     @obj3 = MyClass.new('red', 532)
@@ -39,5 +52,4 @@ shared_examples_for 'a spec-more like thing' do
     lambda {"do(gg)[^]y".matches 'oompa loompa'}.should.raise(Bacon::Error)
     lambda {"do(gg)[^]y".matches /o(gg)/}.should.raise(Bacon::Error)
   end
-
 end

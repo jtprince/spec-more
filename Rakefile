@@ -1,7 +1,6 @@
 require 'rubygems'
 require 'rake'
 require 'jeweler'
-require 'rcov/rcovtask'
 require 'rake/rdoctask'
 
 
@@ -11,18 +10,13 @@ Jeweler::Tasks.new do |gem|
   gem.email = "jtprince@gmail.com"
   gem.homepage = "http://github.com/jtprince/spec-more"
   gem.authors = ["John T. Prince"]
-  gem.add_dependency("bacon")
+  gem.add_development_dependency("bacon")
+  gem.add_development_dependency("rspec")
 end
 
 require 'rake/testtask'
 Rake::TestTask.new(:spec) do |spec|
   spec.libs << 'lib' << 'spec'
-  spec.pattern = 'spec/**/*_spec.rb'
-  spec.verbose = true
-end
-
-Rcov::RcovTask.new do |spec|
-  spec.libs << 'spec'
   spec.pattern = 'spec/**/*_spec.rb'
   spec.verbose = true
 end

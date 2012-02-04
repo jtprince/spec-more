@@ -1,9 +1,10 @@
 require 'rubygems'
-require 'bacon'
+require 'rspec/more' # used to test itself, strangely enough
 
-#$LOAD_PATH.unshift(File.dirname(__FILE__))
-#$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+require 'simplecov'
+SimpleCov.start
 
-require 'spec/more'
+RSpec.configure do |config|
+  
+end
 
-Bacon.summary_on_exit
